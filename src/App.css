@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: "Libre Bodoni", serif;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 35% 65%;
+
+  background: #f7ecdd;
+}
+
+/* LEFT SIDE */
+
+.imageSide {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #ddd;
+
+  overflow: hidden;
+}
+
+.imageSide img {
+  width: 100%;
+  height: 100vh;
+
+  object-fit: cover;
+  display: block;
+}
+
+/* RIGHT SIDE */
+
+.contentSide {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0px 50px 70px 50px;
+}
+
+/* LOGO */
+
+.mainLogo {
+  width: min(360px, 55%);
+  height: auto;
+
+  margin-bottom: 20vh;
+}
+
+/* SURVEY */
+
+.survey {
+  width: min(760px, 100%);
+
+  text-align: center;
+}
+
+.survey h1 {
+  margin: 0 0 45px;
+
+  font-size: clamp(44px, 4vw, 68px);
+  line-height: 1.05;
+
+  font-weight: 600;
+}
+
+/* ANSWERS */
+
+.answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+}
+
+.answers button {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 90px;
+  padding: 24px 28px;
+
+  border: none;
+  border-radius: 2vh;
+
+  background: #eedfca;
+  color: #111;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.12s ease;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* TEXT */
+
+.buttonText {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* WHITE BAR */
+
+.shine {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 30%;
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  transform: translateX(-150%);
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+/* FINGER DOWN */
+
+.answers button:active {
+  transform: scale(0.98);
+}
+
+
+/* SELECTED */
+
+.answers button.selected {
+  background-color: #ffd88a;
+  color: white;
+
+  box-shadow:
+    0 0 15px rgba(242, 189, 85, 0.8),
+    0 0 35px rgba(242, 189, 85, 0.55),
+    0 0 60px rgba(242, 189, 85, 0.3);
+}
+
+
+/* PLAY AFTER CLICK */
+
+.answers button.selected .shine {
+  animation: shineMove 0.65s ease-in-out forwards;
+}
+
+
+@keyframes shineMove {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  100% {
+    transform: translateX(450%);
+  }
+}
+
+.answers button:last-child {
+  grid-column: 1 / 3;
+}
+
+/* LAPTOP / SMALLER WIDTH */
+
+@media (max-width: 1000px) {
+  .app {
+    grid-template-columns: 30% 70%;
+  }
+
+  .contentSide {
+    padding: 40px;
+  }
+
+  .survey h1 {
+    font-size: 48px;
+  }
+
+  .answers button {
+    font-size: 19px;
+    min-height: 80px;
+  }
+}
