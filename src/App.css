@@ -609,3 +609,40 @@ button {
     font-size: 21px;
   }
 }
+
+.noCodeContainer {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.noCodeButton {
+  padding: 15px 36px;
+  background: #e8c5b8;
+  border: 1px solid #d6a99a;
+  border-radius: 14px;
+  color: #613e36;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(140, 82, 65, 0.12);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.noCodeButton:hover {
+  background: #ddb3a4;
+  box-shadow: 0 6px 18px rgba(140, 82, 65, 0.2);
+  transform: translateY(-2px);
+}
+
+.noCodeButton:active {
+  transform: scale(0.97);
+}
+
+.noCodeButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

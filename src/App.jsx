@@ -270,6 +270,15 @@ function App() {
             </section>
 
           </div>
+          <div className="noCodeContainer">
+  <button
+    className="noCodeButton"
+    disabled={sending}
+    onClick={() => submitAnswer(selectedAnswer, "")}
+  >
+    I don't know the code
+  </button>
+</div>
         </div>
 
       ) : (
