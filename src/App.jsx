@@ -274,9 +274,17 @@ function App() {
   <button
     className="noCodeButton"
     disabled={sending}
-    onClick={() => submitAnswer(selectedAnswer, "")}
+    onClick={() => submitAnswer(selectedAnswer, "no code")}
   >
-    I don't know the code
+    I don't remember the code
+  </button>
+
+  <button
+    className="differentVideoButton"
+    disabled={sending}
+    onClick={() => submitAnswer(selectedAnswer, "different brand")}
+  >
+    I saw a different video
   </button>
 </div>
         </div>
